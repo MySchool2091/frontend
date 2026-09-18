@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Students Information:v.D.0.2</title>
+<style>
+        fieldset {
+  background-color: #daabab;
+}
+
+legend {
+  background-color: rgb(7, 240, 228);
+  color: rgb(2, 2, 2);
+  padding: 5px 10px;
+}
+
+input {
+  margin: 5px;
+}
+.btn {
+
+  padding: 8px 12px;
+        background-color: hwb(199 9% 8% / 0.37);
+        color: #000000;
+        font-style: oblique;
+        font-weight: bold;
+        border-radius: 10px;
+}
+
+
+
+.field_set{
+  border-color: #F00;
+  border-style: solid;
+  width: 550px;
+  background-color:#81f0f8;
+}
+
+
+.field_set_d{
+  border-color: rgb(12, 12, 12);
+  border-style: solid;
+  width: 500px;
+  background-color:#93b3c0;
+}
+
+</style>
+</head>
+<body>
+  <form method="POST" action="/student_add_student">
+        <fieldset class="field_set">
+    <legend>My Test Student Information Systems 🏃</legend>
+     <p>
+         First Name: <input type = "text" name = "fname" required />
+        </p>
+         <p>
+         Last Name: <input type = "text" name = "lname"  required />
+        </p>
+         <p>
+         <input type = "radio" name = "Gender" value = "Male"> Male
+         <input type = "radio" name = "Gender" value = "Female"> Female
+        </p>
+        <p>
+        Student ID: <input type = "text" name = "ID" required />
+        </p>
+        <p>
+        <label for="Subject">Subject:</label>
+                <select name="Subject" type="text" size="1" required >
+                        <option>Medicine</option>
+                        <option>Physics</option>
+                        <option>Chemistry</option>
+                        <option>Maths</option>
+                        <option>Biology</option>
+                        <option>English</option>
+                        <option>ICT</option>
+                        <option>History</option>
+                </select>
+        </p>
+        <p>
+        Phone Number: <input type = "text" name = "phone" required />📞
+        </p>
+        <p>
+        Admission Date: <input type = "date" name = "AdminDate"  required />
+        </p>
+        <p>
+        <button type="submit" class="btn">Add Student</button>
+    </p>
+       
+        <fieldset class="field_set_d">
+         <legend>Build Info</legend>
+        <p>
+        <font style="color:blue"  size="4" > ✅Database: MySQL,App Version: D.0.2</font><br>
+        <font style="color:blue"  size="4" > ✅Example Link: https://myschool01.mremasrejoy.com/student </font><br>
+        <font style="color:blue"  size="4" > 🕒Modification Date: Wed May 13 12:50:20 PM ACST 2026</font><br>
+        <font style="color:blue"  size="4" > ✅This is learning and testing  app 🌄</font>
+        </p>
+        </fieldset>
+</fieldset>
+</form>
+<br>
+        <h3>Students Information:</h3>
+        <ul>
+                {% for student in students %}
+                        <li>{{ student.fname }} [Student ID: {{ student.ID }}, Phone: {{ student.phone }}]<a href="/student_delete_student/{{student.ID }}">Delete</a></li>
+                {% endfor %}
+        </ul>
+</body>
+</html>
