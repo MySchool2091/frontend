@@ -1,8 +1,8 @@
 name: CI/CD — pharma-ui
 
-# Triggers on push to develop / release branches only.
+# Triggers on push to develop / release branches only. 
 # PRs → lint, test, security run but no Docker build.
-# PROD promotion → promote-prod-pharma-ui.yml (workflow_dispatch)
+# PROD promotion → promote-prod-pharma-ui.yml (workflow_dispatch) 
 
 on:
   push:
