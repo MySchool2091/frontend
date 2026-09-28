@@ -1,4 +1,4 @@
-name: CI/CD — pharma-ui
+name: CI/CD — pharma-ui-workflow-28092026
 
 # Triggers on push to develop / release branches only.
 # PRs → lint, test, security run but no Docker build.
